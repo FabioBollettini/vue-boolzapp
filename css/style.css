@@ -1,0 +1,51 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+}
+
+body {
+    height: 100vh;
+    background: linear-gradient(to top, white 85%, #128C7E 85% 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* LAYOUT */
+.container {
+    display: flex;
+    background: white;
+    width: 80%;
+    min-width: 900px;
+    height: 95vh;
+    box-shadow: 0 10px 10px 10px -10px rgba(0, 0, 0, 1);
+}
+
+/* CONTACTS */
+.contacts {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 35%;
+    background: grey;
+}
+
+.contacts .friends {
+    flex-grow: 1;
+    background: darkgoldenrod;
+}
+
+/* CHAT */
+.chat {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 65%;
+    background: dodgerblue;
+}
+
+.chat-main {
+    background: white;
+    flex-grow: 1;
+    overflow-y: auto;
+}
