@@ -31,20 +31,8 @@ h4 {
     font-weight: 700;
 }
 
-.contacts .user,
-.chat .chat-header,
-.chat .chat-footer {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: #ededed;
-}
-
-.contacts .user .img-user,
-.contacts .user .icons,
-.chat .chat-header .chat-header-friend {
-    display: flex;
-    align-items: center;
+li {
+    text-decoration: none;
 }
 
 /* LAYOUT */
@@ -62,6 +50,23 @@ h4 {
     display: flex;
     flex-direction: column;
     flex-basis: 35%;
+}
+
+.contacts .user,
+.chat .chat-header,
+.chat .chat-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #ededed;
+}
+
+.contacts .img-user,
+.contacts .img-friend,
+.contacts .user .icons,
+.chat .chat-header .chat-header-friend {
+    display: flex;
+    align-items: center;
 }
 
 .contacts img,
@@ -129,6 +134,14 @@ h4 {
     flex-grow: 1;
 }
 
+.contacts .friends .img-friend {
+    border: 1px solid #f7f7f7;
+}
+
+.contacts .friends > .img-friend:hover {
+    background-color: #eeeeee;
+}
+
 /* CHAT */
 .chat {
     display: flex;
@@ -137,6 +150,8 @@ h4 {
 }
 
 .chat-main {
+    display: flex;
+    flex-direction: column;
     background: white;
     flex-grow: 1;
     overflow-y: auto;
@@ -155,4 +170,32 @@ h4 {
     padding-left: 20px;
     border: none;
     border-radius: 50px;
+}
+
+/* NUVOLETTE MESSAGGI */
+.mex {
+    width: 300px;
+    margin: 10px 60px;
+    padding: 20px;
+    padding-top: 15px;
+    background-color: white;
+    border-radius: 5px;
+    position: relative;
+}
+
+.mex:first-child {
+    margin-top: 75px;
+}
+
+.answer {
+    align-self: flex-end;
+    background-color: #ddfabf;
+}
+
+.mex-date {
+    font-size: 10px;
+    color: #a3a4a5;
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
 }
