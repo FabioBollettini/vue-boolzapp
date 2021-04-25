@@ -51,7 +51,10 @@
             </nav>
 
             <section class="friends">
-                friends
+                <div class="img-friend" v-for="(item, index) in contacts">
+                    <img :src="'./img/avatar' + item.avatar + '.jpg'" alt="avatar">
+                    <span>{{item.name}}</span>
+                </div>
             </section>
         </aside>
 
@@ -61,9 +64,9 @@
                 <div class="chat-header-friend">
                     <img src="./img/avatar_1.jpg" alt="avatar-1">
                     <div class>
-                        <span>Sasso Magico</span>
+                        <span>Michele</span>
                         <h4 class="last-login">
-                            Ultimo accesso oggi alle 10.35
+                            Ultimo accesso oggi alle 10:35
                         </h4>
                     </div>
                 </div>
@@ -76,7 +79,15 @@
             </section>
 
             <section class="chat-main">
-                
+                <div class="mex answer">
+                    Messaggio inviato
+                    <div class="mex-date">{{contacts[0].messages[0].date}}</div>
+                </div>
+
+                <div class="mex">
+                    Messaggio
+                    <div class="mex-date">{{contacts[0].messages[0].date}}</div>
+                </div>
             </section>
 
             <section class="chat-footer">
@@ -88,6 +99,6 @@
     </div>
 
     <!-- JS -->
-    <script src="./js/contatti.js"></script>
+    <script src="./js/script.js"></script>
 </body>
 </html>
