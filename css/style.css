@@ -3,14 +3,48 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Lato', sans-serif;
+    font-weight: 400;
 }
 
 body {
     height: 100vh;
-    background: linear-gradient(to top, white 85%, #128C7E 85% 100%);
+    background: linear-gradient(to top, #dee0da 85%, #128C7E 85% 100%);
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+/* UTILITIES */
+i {
+    color: #bababa;
+    cursor: pointer;
+}
+
+a {
+    color: #5f8194; 
+}
+
+h4 {
+    padding-top: 4px;
+    font-size: 14px;
+    color: #868b8f;
+    font-weight: 700;
+}
+
+.contacts .user,
+.chat .chat-header,
+.chat .chat-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #ededed;
+}
+
+.contacts .user .img-user,
+.contacts .user .icons,
+.chat .chat-header .chat-header-friend {
+    display: flex;
+    align-items: center;
 }
 
 /* LAYOUT */
@@ -28,12 +62,71 @@ body {
     display: flex;
     flex-direction: column;
     flex-basis: 35%;
-    background: grey;
+}
+
+.contacts img,
+.chat img {
+    max-width: 100px;
+    border-radius: 50%;
+    padding: 10px 20px;
+}
+
+.contacts .icons i ,
+.chat .icons i ,
+.chat .chat-footer i{
+    padding: 0px 20px;
+    font-size: 25px;
+}
+
+.contacts .icons i:last-child {
+    margin-right: 20px;
+}
+
+.contacts .notify {
+    display: flex;
+    align-items: center;
+    background: #a2dffe;
+}
+
+.contacts .notify i {
+    margin: 20px 30px;
+    padding: 10px;
+    font-size: 25px;
+    color: #a2dffe;
+    background-color: white;
+    border-radius: 50%;
+}
+
+.contacts .notify .enable-notif {
+    display: flex;
+    flex-direction: column;
+}
+
+.contacts .search {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    background-color: #fbfbfb;
+}
+
+.contacts .search i{
+    font-size: 20px;
+    padding: 9px 20px;
+    background-color: white;
+    border: 1px solid #f7f7f7;
+    border-radius: 5px;
+}
+
+.contacts .search input {
+    height: 40px;
+    width: 85%;
+    padding-left: 20px;
+    border: 1px solid #f7f7f7;
+    border-radius: 2px;
 }
 
 .contacts .friends {
     flex-grow: 1;
-    background: darkgoldenrod;
 }
 
 /* CHAT */
@@ -41,11 +134,25 @@ body {
     display: flex;
     flex-direction: column;
     flex-basis: 65%;
-    background: dodgerblue;
 }
 
 .chat-main {
     background: white;
     flex-grow: 1;
     overflow-y: auto;
+    background-image: url(../img/mine.jpg);
+}
+
+.chat .chat-footer i {
+    padding: 20px 40px;
+    color: #777e82;
+}
+
+.chat .chat-footer input{
+    width: 80%;
+    height: 50px;
+    margin: 5px;
+    padding-left: 20px;
+    border: none;
+    border-radius: 50px;
 }
