@@ -8,6 +8,10 @@ const app = new Vue(
         el: "#app",
         // Elenco contatti
         data: {
+            user: {
+                name: 'Fabio',
+                avatar: '_io',
+            },
             contacts: [
                 {
                     name: 'Michele',
@@ -93,8 +97,16 @@ const app = new Vue(
                     ],
                 },
             ],
+            indexContacts: 0,
+        },
+        methods: {
+            setFriendImg(index) {
+                this.indexContacts = index;
+            }
         }
+        
     }
     
-);
-
+    );
+    
+    

@@ -172,22 +172,26 @@ li {
     border-radius: 50px;
 }
 
-/* NUVOLETTE MESSAGGI */
+/* MESSAGGI */
 .mex {
-    width: 300px;
+    max-width: 40%;
     margin: 10px 60px;
     padding: 20px;
     padding-top: 15px;
-    background-color: white;
     border-radius: 5px;
     position: relative;
+    word-wrap: break-word;
 }
 
 .mex:first-child {
     margin-top: 75px;
 }
 
-.answer {
+.sent {
+    background-color: white;
+}
+
+.received {
     align-self: flex-end;
     background-color: #ddfabf;
 }
@@ -199,3 +203,5 @@ li {
     bottom: 5px;
     right: 5px;
 }
+
+

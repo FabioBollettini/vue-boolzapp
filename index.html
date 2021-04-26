@@ -19,12 +19,17 @@
 
     <div id="app" class="container">
         
-        <!-- CONTACTS -->
+        <!--
+            CONTACTS 
+        -->
         <aside class="contacts">
+            <!-- 
+                USER
+             -->
             <section class="user">
                 <div class="img-user">
-                    <img src="./img/avatar_io.jpg" alt="user">
-                    <span>Nome user</span>
+                    <img :src="'./img/avatar' + user.avatar + '.jpg'" :alt="user.name">
+                    <span>{{user.name}}</span>
                 </div>
 
                 <div class="icons">
@@ -44,27 +49,45 @@
                     <a href="#">Attiva notifiche Desktop</a>
                 </div>
             </section>
-
+            
+            <!-- 
+                SEARCH
+             -->
             <nav class="search">
                 <i class="fas fa-search"></i>
                 <input type="text" placeholder="Cerca o inizia una nuova chat">
             </nav>
 
+            <!-- 
+                CONTACT LIST
+             -->
             <section class="friends">
-                <div class="img-friend" v-for="(item, index) in contacts">
+                <div class="img-friend" 
+                    v-for="(item, index) in contacts"
+                    @click="setFriendImg(index)"
+                    >
                     <img :src="'./img/avatar' + item.avatar + '.jpg'" alt="avatar">
                     <span>{{item.name}}</span>
                 </div>
             </section>
         </aside>
 
-        <!-- CHAT -->
+        <!-- 
+            CHAT
+         -->
         <main class="chat">
             <section class="chat-header">
-                <div class="chat-header-friend">
-                    <img src="./img/avatar_1.jpg" alt="avatar-1">
-                    <div class>
-                        <span>Michele</span>
+                <div v-for="(item, index) in contacts"
+                    v-show="contacts[index] == contacts[indexContacts]"
+                    class="chat-header-friend"
+                    >
+                    <img :src="'./img/avatar' + item.avatar + '.jpg'" 
+                        alt="avatar"
+                    >
+                    <div>
+                        <span class="friend-name">
+                        {{item.name}}
+                        </span>
                         <h4 class="last-login">
                             Ultimo accesso oggi alle 10:35
                         </h4>
@@ -79,13 +102,11 @@
             </section>
 
             <section class="chat-main">
-                <div class="mex answer">
-                    Messaggio inviato
-                    <div class="mex-date">{{contacts[0].messages[0].date}}</div>
-                </div>
-
-                <div class="mex">
-                    Messaggio
+                <div class="mex"
+                    v-for="(item, index) in this.contacts[this.indexContacts].messages"
+                    :class="{'sent': contacts[index].messages[index].status == 'sent','received': contacts[index].messages[index].status == 'received'}"
+                    >
+                    {{item.message}}
                     <div class="mex-date">{{contacts[0].messages[0].date}}</div>
                 </div>
             </section>
