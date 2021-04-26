@@ -104,21 +104,24 @@
             <section class="chat-main">
                 <div class="mex"
                     v-for="(item, index) in this.contacts[this.indexContacts].messages"
-                    :class="{
-                        'sent': item.status == 'sent', 
-                        'received': item.status == 'received'
-                    }"
+                    :class="{'sent': item.status == 'sent', 
+                        'received': item.status == 'received'}"
                     >
                     {{item.message}}
                     <div class="mex-date">
-                        {{contacts[index].messages[index].date}}
+                        {{item.date}}
                     </div>
                 </div>
             </section>
 
             <section class="chat-footer">
                 <i class="far fa-smile"></i>
-                <input type="text" placeholder="Scrivi un messaggio">
+                <input type="text" 
+                    placeholder="Scrivi un messaggio"
+                    <!-- v-model.trim="newMex"
+                    @keyup.enter="addMex"
+                    ref="mexInput" -->
+                    >
                 <i class="fas fa-microphone"></i>
             </section>
         </main>

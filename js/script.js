@@ -98,11 +98,31 @@ const app = new Vue(
                 },
             ],
             indexContacts: 0,
+            newMex: "",
         },
         methods: {
+
+            // Cambiamento immagine al click
             setFriendImg(index) {
                 this.indexContacts = index;
-            }
+            },
+
+            // Aggiunta messaggio
+            // addMex() {
+
+            //     if(this.newMex !== "") {
+
+            //         this.contacts.messages.push({
+            //             date: "999",
+            //             message: this.newMex,
+            //             status: 'sent',
+            //         },);
+
+            //         this.newMex = "";
+            //         this.$refs.mexInput.focus();
+            //         console.log(this)
+            //     }
+            // },
         }
         
     }
