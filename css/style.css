@@ -187,11 +187,11 @@ li {
     margin-top: 75px;
 }
 
-.sent {
+.received {
     background-color: white;
 }
 
-.received {
+.sent {
     align-self: flex-end;
     background-color: #ddfabf;
 }

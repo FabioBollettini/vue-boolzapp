@@ -104,10 +104,15 @@
             <section class="chat-main">
                 <div class="mex"
                     v-for="(item, index) in this.contacts[this.indexContacts].messages"
-                    :class="{'sent': contacts[index].messages[index].status == 'sent','received': contacts[index].messages[index].status == 'received'}"
+                    :class="{
+                        'sent': item.status == 'sent', 
+                        'received': item.status == 'received'
+                    }"
                     >
                     {{item.message}}
-                    <div class="mex-date">{{contacts[0].messages[0].date}}</div>
+                    <div class="mex-date">
+                        {{contacts[index].messages[index].date}}
+                    </div>
                 </div>
             </section>
 
@@ -123,3 +128,6 @@
     <script src="./js/script.js"></script>
 </body>
 </html>
+
+
+
