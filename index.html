@@ -64,8 +64,8 @@
             <section class="friends">
                 <div class="img-friend" 
                     v-for="(item, index) in contacts"
-                    @click="setFriendImg(index)"
-                    >
+                    @click="setFriendContact(index)"
+                >
                     <img :src="'./img/avatar' + item.avatar + '.jpg'" alt="avatar">
                     <span>{{item.name}}</span>
                 </div>
@@ -80,7 +80,7 @@
                 <div v-for="(item, index) in contacts"
                     v-show="contacts[index] == contacts[indexContacts]"
                     class="chat-header-friend"
-                    >
+                >
                     <img :src="'./img/avatar' + item.avatar + '.jpg'" 
                         alt="avatar"
                     >
@@ -103,10 +103,10 @@
 
             <section class="chat-main">
                 <div class="mex"
-                    v-for="(item, index) in this.contacts[this.indexContacts].messages"
+                    v-for="item in contacts[indexContacts].messages"
                     :class="{'sent': item.status == 'sent', 
                         'received': item.status == 'received'}"
-                    >
+                >
                     {{item.message}}
                     <div class="mex-date">
                         {{item.date}}
@@ -118,10 +118,10 @@
                 <i class="far fa-smile"></i>
                 <input type="text" 
                     placeholder="Scrivi un messaggio"
-                    <!-- v-model.trim="newMex"
+                    v-model.trim="newMex"
                     @keyup.enter="addMex"
-                    ref="mexInput" -->
-                    >
+                    ref="mexInput"
+                >
                 <i class="fas fa-microphone"></i>
             </section>
         </main>

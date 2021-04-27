@@ -101,32 +101,38 @@ const app = new Vue(
             newMex: "",
         },
         methods: {
-
-            // Cambiamento immagine al click
-            setFriendImg(index) {
+            
+            // Cambiamento indice profilo al click
+            setFriendContact(index) {
                 this.indexContacts = index;
             },
 
             // Aggiunta messaggio
-            // addMex() {
+            addMex() {
+                
+                if(this.newMex !== "") {
+                    this.contacts[this.indexContacts].messages.push({
+                        date: "999",
+                        message: this.newMex,
+                        status: 'sent',
+                    });
 
-            //     if(this.newMex !== "") {
+                    this.newMex = "";
+                    this.$refs.mexInput.focus(); 
 
-            //         this.contacts.messages.push({
-            //             date: "999",
-            //             message: this.newMex,
-            //             status: 'sent',
-            //         },);
+                    // Risposta automatica
+                    setTimeout(() => {
+                       this.contacts[this.indexContacts].messages.push({
+                           date: "999",
+                           message: "ok",
+                           status: "received",
+                       }) 
+                    }, 1000);
+                };
 
-            //         this.newMex = "";
-            //         this.$refs.mexInput.focus();
-            //         console.log(this)
-            //     }
-            // },
+            },
         }
         
     }
     
     );
-    
-    
