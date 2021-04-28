@@ -2,6 +2,8 @@
  * 
  * VUE BOOLZAPP
  */
+ dayjs().format();
+ dayjs.extend(dayjs_plugin_customParseFormat);
 
 const app = new Vue(
     {
@@ -113,7 +115,7 @@ const app = new Vue(
                 
                 if(this.newMex !== "") {
                     this.contacts[this.indexContacts].messages.push({
-                        date: "999",
+                        date: dayjs().format('DD/MM/YY H:mm:ss'),
                         message: this.newMex,
                         status: 'sent',
                     });
@@ -123,7 +125,7 @@ const app = new Vue(
                     // Risposta automatica
                     setTimeout(() => {
                        this.contacts[this.indexContacts].messages.push({
-                           date: "999",
+                           date: dayjs().format('DD/MM/YY H:mm:ss'),
                            message: "ok",
                            status: "received",
                        }) 

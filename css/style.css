@@ -175,6 +175,7 @@ li {
 /* MESSAGGI */
 .mex {
     max-width: 40%;
+    min-width: 15%;
     margin: 10px 60px;
     padding: 20px;
     padding-top: 15px;
@@ -188,6 +189,7 @@ li {
 }
 
 .received {
+    align-self: flex-start;
     background-color: white;
 }
 
