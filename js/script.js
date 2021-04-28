@@ -99,6 +99,7 @@ const app = new Vue(
             ],
             indexContacts: 0,
             newMex: "",
+            search: "",
         },
         methods: {
             
@@ -131,6 +132,26 @@ const app = new Vue(
                 };
 
             },
+
+            // // Search
+            // searchContact() {
+            //     this.contacts.forEach(contact => {
+                    
+            //         if( contact.name.includes(this.search)) {
+            //             contact.visible == true;
+            //         } else {
+            //             contact.visible == false;
+            //             console.log(contact.visible)
+            //         }
+
+            //         this.search = "";
+            //     })
+            // }
+            // filteredList () {
+            //     return this.contacts.filter(contact => {
+            //         return contact.name.toLowerCase().includes(this.search.toLowerCase())
+            //     })
+            // }
         }
         
     }
