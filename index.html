@@ -58,7 +58,6 @@
                 <input type="text" 
                     placeholder="Cerca o inizia una nuova chat"
                     v-model.trim="search"
-                    @keyup.enter="filteredList"
                 >
             </nav>
 
@@ -67,7 +66,7 @@
              -->
             <section class="friends">
                 <div class="img-friend" 
-                    v-for="(item, index) in contacts"
+                    v-for="(item, index) in filteredList"
                     @click="setFriendContact(index)"
                 >
                     <img :src="'./img/avatar' + item.avatar + '.jpg'" alt="avatar">
@@ -124,7 +123,6 @@
                     placeholder="Scrivi un messaggio"
                     v-model.trim="newMex"
                     @keyup.enter="addMex"
-                    ref="mexInput"
                 >
                 <i class="fas fa-microphone"></i>
             </section>
